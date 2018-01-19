@@ -1,0 +1,101 @@
+snippet comment
+<!--  ${1:comment}  -->
+endsnippet
+
+snippet bcomment "block comment"
+<!--
+${1:comment}
+-->
+endsnippet
+
+snippet path
+<path>
+    <WIMSNdir>.\Lib\ENDF70.69\WIMSN\WIMSNdir.xml</WIMSNdir>
+    <subdir>.\Lib\ENDF70.69\LSQsub\LSQsubdir.xml</subdir>
+    <DepFile>.\Lib\DepFile\Deplib.dat</DepFile>
+</path>
+endsnippet
+
+snippet material
+<material ID="${1}" temperature="${2}"${3}>
+    ${4}
+</material>
+endsnippet
+
+# tag in tag <material>
+snippet nuclide
+<nuclide alias="${1}" density="${2}"/>
+endsnippet
+# end of tag in tag <material>
+
+snippet subgeo
+<SubGeo ID="${1}" SubType="${2}" HalfWidth="${3}" NumLines1st="${4}" NumLines2nd="${5}"${6}>
+    ${7}
+</SubGeo>
+endsnippet
+
+# tags in tag <SubGeo>
+snippet angle
+<Angle1st>${1}</Angle1st>
+endsnippet
+
+snippet ring
+<Ring1st>${1}</Ring1st>
+endsnippet
+
+snippet gapt "GapType"
+<GapType>${1}</GapType>
+endsnippet
+
+snippet gapw "GapWidth"
+<GapWidth>${1}</GapWidth>
+endsnippet
+
+snippet lines1
+<Lines1st>${1}</Lines1st>
+endsnippet
+
+snippet lines2
+<Lines2nd>${1}</Lines2nd>
+endsnippet
+# end of tags in tag <SubGeo>
+
+snippet submat
+<SubMat ID="${1}" SubID="${2}">
+    <MatIDs>
+        ${3}
+    </MatIDs>
+</SubMat>
+endsnippet
+
+snippet modgeo
+<ModGeo ID="${1}" ModType="${2}" NumSubXs="${3}" NumSubYs="${4}">
+    <L>
+        ${5}
+    </L>
+</ModGeo>
+endsnippet
+
+snippet modmat
+<ModMat ID="${1}" ModID="${2}" NumSubXs="${3}" NumSubYs="${4}">
+    <L>
+        ${5}
+    </L>
+</ModMat>
+endsnippet
+
+snippet coregeo
+<CoreGeo NumModXs="${1}" NumModYs="${2}">
+    <L>
+        ${3}
+    </L>
+</CoreGeo>
+endsnippet
+
+snippet coremat
+<CoreMat NumModXs="${1}" NumModYs="${2}">
+    <L>
+        ${3}
+    </L>
+</CoreMat>
+endsnippet
