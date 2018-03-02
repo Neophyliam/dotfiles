@@ -147,3 +147,5 @@ alias mux='tmuxinator'
 alias emacs="env LC_CTYPE=zh_CN.UTF-8 emacs"
 alias du='du -h'
 alias df='df -h'
+alias unittest='python3 -m unittest'
+alias pyconsole='python3 -i console.py'

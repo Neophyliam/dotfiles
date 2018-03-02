@@ -17,6 +17,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+"Plugin 'vim-airline/vim-airline'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -34,6 +35,7 @@ set number
 set shiftwidth=4
 set wildmenu
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
+set colorcolumn=80
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
