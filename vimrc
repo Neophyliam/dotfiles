@@ -25,14 +25,13 @@ filetype plugin indent on    " required
 " The list of options
 set backup		" keep a backup file (restore to previous version)
 set backupdir=~/.vim/vimbak
-"set undofile		" keep an undo file (undo changes after closing)
-"set backupext=.bak	  keep backup file ending with .bak, rather than ~
 set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number
 set shiftwidth=4
+set scrolloff=5
 set wildmenu
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set colorcolumn=80
@@ -119,12 +118,18 @@ augroup backuprc
 augroup END
 
 
-" Package settings
+" Plugin settings
 packadd matchit
 "Settings for vim-markdown
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled=2
+let g:vim_markdown_autowrite=1
+let g:vim_markdown_no_extensions_in_markdown=1
 " Settings for ale
 let g:ale_echo_msg_format='[%linter%|%severity%] %s'
+let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
+let g:ale_python_flake8_args = '-m flake8'
+let g:ale_fixers = {'python': ['isort', 'autopep8']}
+let g:ale_fix_on_save = 1
 " Settings for UltiSnips
 let g:UltiSnipsExpandTrigger="<c-h>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -132,9 +137,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/mysnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
-"Setting for ale
-let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
-let g:ale_python_flake8_args = '-m flake8'
 
 " Colorscheme setting
 colorscheme molokai
