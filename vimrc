@@ -128,7 +128,7 @@ let g:vim_markdown_no_extensions_in_markdown=1
 let g:ale_echo_msg_format='[%linter%|%severity%] %s'
 let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
 let g:ale_python_flake8_args = '-m flake8'
-let g:ale_fixers = {'python': ['isort', 'autopep8']}
+let g:ale_fixers = {'python': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_fix_on_save = 1
 " Settings for UltiSnips
 let g:UltiSnipsExpandTrigger="<c-h>"
