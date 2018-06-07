@@ -1,25 +1,22 @@
-" Required by Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" My plugins are listed here
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'w0rp/ale'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-"Plugin 'vim-airline/vim-airline'
-call vundle#end()            " required
-filetype plugin indent on    " required
+set nocompatible
+" vim-plug automatic installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/bundle')
+Plug 'junegunn/vim-plug'
+Plug 'godlygeek/tabular'
+Plug 'w0rp/ale'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'SirVer/ultisnips' |  Plug 'honza/vim-snippets'
+Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+call plug#end()
 
 
 " The list of options
@@ -69,6 +66,7 @@ nnoremap <silent> ]B :blast<CR>
 " For ale plugin. These can be used to find errors and warnings quickly.
 nmap <silent> [e <Plug>(ale_previous)
 nmap <silent> ]e <Plug>(ale_next)
+nmap <leader>e <Plug>(ale_detail)
 " Cycle items in quickfix list quickly. It's like [e for ale plugin. But
 " they are different.
 nnoremap ]q :cnext<CR>
@@ -120,10 +118,6 @@ augroup END
 
 " Plugin settings
 packadd matchit
-"Settings for vim-markdown
-let g:vim_markdown_folding_disabled=2
-let g:vim_markdown_autowrite=1
-let g:vim_markdown_no_extensions_in_markdown=1
 " Settings for ale
 let g:ale_echo_msg_format='[%linter%|%severity%] %s'
 let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
