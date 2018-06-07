@@ -8,5 +8,5 @@ else
     mkdir vimbak
     cd "$cwd"
     cp vimrc ~/.vimrc
-    cp mysnips ~/.vim/
+    cp -r mysnips ~/.vim/
 fi
