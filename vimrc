@@ -12,10 +12,12 @@ Plug 'w0rp/ale'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'SirVer/ultisnips' |  Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-lastpat'
 call plug#end()
 
 
@@ -28,7 +30,9 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number
 set shiftwidth=4
+set tabstop=4
 set scrolloff=5
+set updatetime=1000
 set wildmenu
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set colorcolumn=80
@@ -105,14 +109,11 @@ augroup vimrcEx
     \   exe "normal! g`\"" |
     \ endif
 augroup END
-" Auto-backup dot files.
-augroup backuprc
+
+augroup reload
     au!
     " Source the vimrc file after saving it.
     autocmd bufwritepost .vimrc source $MYVIMRC
-    autocmd bufwritepost .vimrc exe "!backup"
-    autocmd bufwritepost .bashrc exe "!backup"
-    autocmd bufwritepost .tmux.conf exe "!backup"
 augroup END
 
 
