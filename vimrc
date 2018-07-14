@@ -93,6 +93,8 @@ nnoremap k gk
 nnoremap Y y$
 nnoremap go mmo<C-[>`m
 nnoremap gO mmO<C-[>`m
+" Make g<C-]> be the default jump command
+nnoremap <C-]> g<C-]>
 
 
 " Auto commands defined here.
@@ -109,7 +111,6 @@ augroup vimrcEx
     \   exe "normal! g`\"" |
     \ endif
 augroup END
-
 augroup reload
     au!
     " Source the vimrc file after saving it.
