@@ -6,6 +6,7 @@ else
     mkdir .vim
     cd .vim
     mkdir vimbak
+	mkdir undo
     cd "$cwd"
     cp vimrc ~/.vimrc
     cp -r mysnips ~/.vim/

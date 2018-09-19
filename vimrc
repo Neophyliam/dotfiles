@@ -24,6 +24,8 @@ call plug#end()
 " The list of options
 set backup		" keep a backup file (restore to previous version)
 set backupdir=~/.vim/vimbak
+set undofile
+set undodir=~/.vim/undo
 set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
