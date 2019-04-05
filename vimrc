@@ -18,6 +18,7 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-lastpat'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 
@@ -59,6 +60,7 @@ endif
 
 
 " Mappings are defined here
+let mapleader = ","
 " Don't use Ex mode, use Q for formatting
 map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
@@ -97,6 +99,8 @@ nnoremap go mmo<C-[>`m
 nnoremap gO mmO<C-[>`m
 " Make g<C-]> be the default jump command
 nnoremap <C-]> g<C-]>
+" Easymotion map
+map <Leader> <Plug>(easymotion-prefix)
 
 
 " Auto commands defined here.
@@ -129,6 +133,9 @@ let g:ale_python_flake8_options = '-m flake8'
 let g:ale_fixers = {'python': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_fix_on_save = 1
 " Settings for UltiSnips
+let g:snips_author="Neophyliam"
+let g:snips_email="727549953@qq.com"
+let g:snips_github="https://github.com/Neophyliam"
 let g:UltiSnipsExpandTrigger="<c-h>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
