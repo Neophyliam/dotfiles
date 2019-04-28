@@ -20,6 +20,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-lastpat'
 Plug 'easymotion/vim-easymotion'
 call plug#end()
+packadd matchit
 
 
 " The list of options
@@ -99,8 +100,6 @@ nnoremap go mmo<C-[>`m
 nnoremap gO mmO<C-[>`m
 " Make g<C-]> be the default jump command
 nnoremap <C-]> g<C-]>
-" Easymotion map
-map <Leader> <Plug>(easymotion-prefix)
 
 
 " Auto commands defined here.
@@ -124,8 +123,6 @@ augroup reload
 augroup END
 
 
-" Plugin settings
-packadd matchit
 " Settings for ale
 let g:ale_echo_msg_format='[%linter%|%severity%] %s'
 let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
@@ -136,9 +133,10 @@ let g:ale_fix_on_save = 1
 let g:snips_author="Neophyliam"
 let g:snips_email="727549953@qq.com"
 let g:snips_github="https://github.com/Neophyliam"
-let g:UltiSnipsExpandTrigger="<c-h>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-h>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/mysnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
