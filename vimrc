@@ -35,6 +35,7 @@ set incsearch		" do incremental searching
 set number
 set shiftwidth=4
 set tabstop=4
+set expandtab
 set scrolloff=5
 set updatetime=1000
 set wildmenu
@@ -140,6 +141,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/mysnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
+" Instant markdown
+let g:instant_markdown_autostart = 0
 
 " Colorscheme setting
 colorscheme molokai
