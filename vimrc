@@ -10,7 +10,8 @@ Plug 'junegunn/vim-plug'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-Plug 'SirVer/ultisnips' |  Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -19,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-lastpat'
 Plug 'easymotion/vim-easymotion'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 packadd matchit
 
@@ -33,6 +35,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number
+set cursorline
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -143,6 +146,10 @@ let g:UltiSnipsSnippetsDir="~/.vim/mysnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
 " Instant markdown
 let g:instant_markdown_autostart = 0
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
+                     \ 'syntax': 'markdown',
+                     \ 'ext': '.md'}]
 
 " Colorscheme setting
 colorscheme molokai

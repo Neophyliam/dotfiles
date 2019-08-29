@@ -139,3 +139,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if $(which thefuck >/dev/null 2>&1); then
     eval "$(thefuck --alias)"
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
