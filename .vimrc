@@ -1,4 +1,3 @@
-set nocompatible
 " vim-plug automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -9,10 +8,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'junegunn/vim-plug'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -20,12 +17,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-lastpat'
 Plug 'easymotion/vim-easymotion'
-Plug 'vimwiki/vimwiki'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'itchyny/lightline.vim'
+Plug 'psf/black', {'tag': '*'}
 call plug#end()
 packadd matchit
 
-
 " The list of options
+colorscheme OceanicNext
+set laststatus=2
 set backup		" keep a backup file (restore to previous version)
 set backupdir=~/.vim/vimbak
 set undofile
@@ -62,7 +62,6 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-
 
 " Mappings are defined here
 let mapleader = ","
@@ -105,7 +104,6 @@ nnoremap gO mmO<C-[>`m
 " Make g<C-]> be the default jump command
 nnoremap <C-]> g<C-]>
 
-
 " Auto commands defined here.
 augroup vimrcEx
     au!
@@ -119,13 +117,13 @@ augroup vimrcEx
     \ if line("'\"") >= 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+    autocmd BufWritePre *.py execute ':Black'
 augroup END
 augroup reload
     au!
     " Source the vimrc file after saving it.
     autocmd bufwritepost .vimrc source $MYVIMRC
 augroup END
-
 
 " Settings for ale
 let g:ale_echo_msg_format='[%linter%|%severity%] %s'
@@ -134,22 +132,13 @@ let g:ale_python_flake8_options = '-m flake8'
 let g:ale_fixers = {'python': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_fix_on_save = 1
 " Settings for UltiSnips
-let g:snips_author="Neophyliam"
+let g:snips_author="neothenil"
 let g:snips_email="727549953@qq.com"
-let g:snips_github="https://github.com/Neophyliam"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-h>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:snips_github="https://github.com/neothenil"
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/mysnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
-" Instant markdown
-let g:instant_markdown_autostart = 0
-" Vimwiki
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
-                     \ 'syntax': 'markdown',
-                     \ 'ext': '.md'}]
-
-" Colorscheme setting
-colorscheme molokai
+let g:black_linelength=80
