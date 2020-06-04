@@ -1,0 +1,10 @@
+[user]
+	name = neothenil
+	email = 727549953@qq.com
+
+[alias]
+    br = branch
+    co = checkout
+    ci = commit
+    st = status
+    lg = log --color --graph --oneline
