@@ -44,3 +44,5 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH="~/.poetry/bin:$PATH"
 export EDITOR='vim'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

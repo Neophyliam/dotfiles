@@ -20,6 +20,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'psf/black', {'tag': '*'}
+Plug '/usr/local/opt/fzf'
 call plug#end()
 packadd matchit
 
@@ -103,6 +104,7 @@ nnoremap go mmo<C-[>`m
 nnoremap gO mmO<C-[>`m
 " Make g<C-]> be the default jump command
 nnoremap <C-]> g<C-]>
+nnoremap <C-p> :<C-u>FZF<CR>
 
 " Auto commands defined here.
 augroup vimrcEx
